@@ -10,3 +10,4 @@
 --type-set=haml=.haml
 --ignore-dir=.rsync_cache
 --type=nosql
+--all
