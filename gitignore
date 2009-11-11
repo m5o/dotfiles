@@ -1,4 +1,4 @@
-.ditz-config
 .DS_Store
+.svn
+*.sw?
 .rake_tasks
-nbproject
