@@ -1,9 +1,33 @@
 [user]
-  email = crnixon@gmail.com
-  name = Clinton R. Nixon
+    name = m5o
+    email = m5o@gmx.com 
+[core]
+  whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+  excludesfile = "/Users/matthias/.gitignore"
+  pager = most
 [github]
-  user = crnixon
-  token = 00aa78a17ed69048edaa80b8e62bba60
+  user = m5o
+  token = c4db80d410cad67b3186bc920b71e51b
+[color]
+  ui = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[color "branch"]
+  current = yellow reverse
+  local = yellow
+  remote = green
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+  whitespace = red reverse
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
 [alias]
   ap = add --patch
   up = pull
@@ -18,13 +42,8 @@
   sr = svn rebase
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   rma = !git status | grep deleted | cut -d ' ' -f 5 | xargs git rm
-  deploy = !git push && cap deploy
-[core]
-  excludesfile = "/Users/cnixon/.gitignore"
-  pager = most
-[color]
-  ui = auto
-[apply]
-  whitespace = nowarn
+[merge]
+  tool = opendiff
+  summary = true
 [help]
   autocorrect = 1
