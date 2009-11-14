@@ -1,6 +1,13 @@
+# Turn on advanced bash completion if the file exists (get it here: http://www.caliban.org/bash/index.shtml#completion)
+# if [ -f /etc/bash_completion ]; then
+#     . /etc/bash_completion
+# fi
+
+# Use bash-completion, if available
 if [ -f `brew --prefix`/etc/bash_completion ]; then
   . `brew --prefix`/etc/bash_completion
 fi
+
 
 export COMP_WORDBREAKS=${COMP_WORDBREAKS/\:/}
 

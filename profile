@@ -9,29 +9,14 @@ export PLATFORM="$MACHINE-$OS-$OSVERSION"
 
 
 
-# Path ------------------------------------------------------------
-if [ "$OS" = "darwin" ] ; then
-  # export PATH=/opt/local/bin:/opt/local/sbin:$PATH  # OS-X Specific, with MacPorts and MySQL installed
+# Load in .bashrc and environment ---------------------------------
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
 fi
 
-if [ -d ~/bin ]; then
-	export PATH=:~/bin:$PATH  # add your bin folder to the path, if you have it. It's a good place to add all your scripts
-fi
-
-if [ -d ~/cl/bin ]; then
-	export PATH=:~/cl/bin:$PATH  # add your bin folder to the path, if you have it
-fi
-
-# ruby rvm - http://rvm.beginrescueend.com/
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 
-# Load in .bashrc -------------------------------------------------
-source ~/.bashrc
-
-
-
-# Hello Messsage --------------------------------------------------
+# Welcome Messsage ------------------------------------------------
 echo -e "Kernel Information: " `uname -smr`
 echo -e "`bash --version`"
 echo -ne "Uptime: "; uptime
