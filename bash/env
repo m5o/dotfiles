@@ -1,0 +1,31 @@
+# Environment ------------------------------------------------------
+# APXS2='/usr/sbin/apxs'
+# APACHE='/usr/sbin/httpd'
+# NGINX_HOME='/usr/local/Cellar/nginx/0.7.62'
+# JAVA_HOME='/Library/Java/Home'
+# SCALA_HOME='/usr/local/Cellar/scala/2.7.5'
+# ANT_HOME='/usr/local/Cellar/apache-ant/1.7.1-bin'
+
+
+
+# PATH ------------------------------------------------------------
+# if [ "$OS" = "darwin" ] ; then
+#   export PATH=/opt/local/bin:/opt/local/sbin:$PATH  # OS-X Specific, with MacPorts
+#   export MANPATH=/opt/local/share/man:$MANPATH
+# fi
+
+if [ -d ~/.bin ]; then
+	export PATH=~/.bin:$PATH
+fi
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# ruby rvm - http://rvm.beginrescueend.com/
+if [[ -s ~/.rvm/scripts/rvm ]] ; then
+  source ~/.rvm/scripts/rvm ;
+fi
+
+
+# compile flags - need it ?
+# CFLAGS='-O3 -march=core2 -m64 -mmmx -msse4.1 -w -mmacosx-version-min=10.6'
+# CXXFLAGS=$CFLAGS

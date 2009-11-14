@@ -1,0 +1,152 @@
+### ALIASES
+
+alias ..='cd ..'
+alias ...='cd .. ; cd ..'
+cl() { cd $1; ls -la; }
+
+
+if [ "$OS" = "linux" ] ; then
+  export LS_OPTIONS='--color=auto'  # For linux, etc
+  # ls colors, see: http://www.linux-sxs.org/housekeeping/lscolors.html
+  export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rb=90'  #LS_COLORS is not supported by the default ls command in OS-X
+else
+  export LS_OPTIONS='-G'  # OS-X SPECIFIC - the -G command in OS-X is for colors, in Linux it's no groups
+fi
+
+alias l='ls $LS_OPTIONS -lA'
+alias la='ls $LS_OPTIONS -a'
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -lh'
+alias lla='ls $LS_OPTIONS -laFh'
+
+alias grep='grep --color=auto -i'  # Case insensitive grep
+alias g="grep"
+alias g+="grep -r $1 *"
+alias h="history"
+alias \?="h | g $1"
+alias ps\?="ps ax | grep $1"
+alias c='clear'
+alias my='mysql -u root'
+alias reload="source ~/.bash/aliases && source ~/.bash/env"
+
+
+# Find
+alias f='find . -iname'
+alias o='less'
+gns(){ # Case insensitive, excluding svn folders
+  find . -path '*/.svn' -prune -o -type f -print0 | xargs -0 grep -I -n -e "$1"
+}
+
+
+# Editors ----------------------------------------------------------
+# alias gvim='/Applications/MacVim.app/Contents/MacOS/vim -g'
+# export EDITOR='mate -w'
+export EDITOR='vim'
+alias e=$EDITOR
+alias v=vim
+
+
+
+
+
+# Subversion
+alias sa='svn status | grep "^\?" | awk "{print \$2}" | xargs svn add'
+alias sl='svn log --limit 5'
+alias se='svn log -v --limit 1'
+alias sr='svn diff | less'
+alias s\?='svn status | grep "^\?"'
+
+# Git
+alias g='git'
+alias ga='git add'
+alias gap='git add --patch'
+alias gc='git commit'
+alias gst='git status'
+alias gsd='git svn dcommit'
+alias gsr='git svn rebase'
+alias gci='git pull --rebase && rake && git push'
+function gg() {
+  git commit -v -a -m "$*"
+}
+
+# Ruby
+alias r='rake'
+alias th='thor'
+alias lr='brew link ruby-enterprise-edition'
+alias jr='jruby -S'
+
+# Rails
+alias ss='script/server'
+alias sc='script/console'
+alias sg='script/generate'
+alias a='autotest -rails'
+alias rr='touch tmp/restart.txt'
+
+# Cleanup
+alias rmorig="find . -name '*.orig' | xargs rm"
+
+# Misc
+alias colorslist="set | egrep 'COLOR_\w*'"
+alias ducks='du -cksh * | sort -rn|head -11' # Lists folders and files sizes in the current folder
+
+if [ "$OS" = "linux" ] ; then
+	alias processes_all='ps -aulx'
+else
+	alias top='top -o cpu' # os x
+fi
+
+alias systail='tail -f /var/log/system.log'
+alias m='more'
+alias rak='rak -a'
+
+alias df='df -h' # Show disk usage
+
+# Shows most used commands, cool script I got this from: http://lifehacker.com/software/how-to/turbocharge-your-terminal-274317.php
+alias profileme="history | awk '{print \$2}' | awk 'BEGIN{FS=\"|\"}{print \$1}' | sort | uniq -c | sort -n | tail -n 20 | sort -nr"
+
+alias untar="tar xvzf"
+
+alias cp_folder="cp -Rpv" #copies folder and all sub files and folders, preserving security and dates
+
+killhard() {
+    kill -9 "$1"
+}
+
+# http://www.macworld.com/article/51830/2006/07/showallfinder.html
+alias hidden-show='defaults write com.apple.Finder AppleShowAllFiles YES;killall Finder'
+alias hidden-hide='defaults write com.apple.Finder AppleShowAllFiles NO;killall Finder'
+
+
+
+
+# Sluething----------------------------------------------------
+findportuser() {
+    lsof -i :"$1"
+}
+
+
+# Security ---------------------------------------------------------
+
+# Folder shared by a group
+# chmod g+s directory 
+#find /foo -type f -print | xargs chmod g+rw,o-rwx,u+rw
+#find /foo -type d -print | xargs chmod g+rwxs,o-rwx,u+rwx
+
+# this might work just the same (not tested)
+# chmod -R g+rwXs,o-rwx,u+rwX /foo
+
+
+# Test ------------------------------------------------------------------------ 
+
+#if [ "$OS" = "linux" ] ; then
+#elif
+#else
+#fi
+
+#if [ -z "$PS1" ]; then
+  #echo 'non-interactive shell'
+  ### non-interactive shells (only)
+#else
+  #echo 'interactive shell'
+  ### interactive shells (only)
+#fi
