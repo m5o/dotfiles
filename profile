@@ -17,10 +17,10 @@ fi
 
 
 # Welcome Messsage ------------------------------------------------
-echo -e "Kernel Information: " `uname -smr`
-echo -e "`bash --version`"
-echo -ne "Uptime: "; uptime
-echo -ne "Server time is: "; date
+echo -e "\033[0;32;40mKernel Information: " `uname -smr`
+echo -e "\033[0;33;40m`bash --version`"
+echo -ne "\033[0;37;40mUptime: "; uptime
+echo -ne "\033[0;34;40mServer time is: "; date
 
 
 
