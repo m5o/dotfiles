@@ -1,13 +1,13 @@
 [user]
-    name = m5o
-    email = m5o@gmx.com 
+  name = m5o
+  email = m5o@gmx.com
+[github]
+  user = m5o
+  token = c4db80d410cad67b3186bc920b71e51b
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
   excludesfile = "/Users/matthias/.gitignore"
   pager = most
-[github]
-  user = m5o
-  token = c4db80d410cad67b3186bc920b71e51b
 [color]
   ui = auto
   branch = auto
