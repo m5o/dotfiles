@@ -1,9 +1,9 @@
 [user]
-    name = m5o
-    email = m5o@gmx.com 
+    name = Matthias Neumayr
+    email = matthias.neumayr@1und1.de
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
-  excludesfile = "/Users/matthias/.gitignore"
+#  excludesfile = "/Users/matthias/.gitignore"
   pager = most
 [github]
   user = m5o
