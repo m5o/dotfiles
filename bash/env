@@ -1,3 +1,18 @@
+# GMX / WEB.de Environment -----------------------------------------
+export CLASSPATH=/opt/local/share/java/webde/bsf.jar:/opt/local/share/java/webde/commons-logging.jar:/opt/local/share/java/webde/jython.jar:$CLASSPATH
+export ANT_HOME=/opt/local/share/java/webde-apache-ant-1.7.0
+#export M2_REPO=/tmp/maven2repo  # standart ist das repo in ~.m2/
+export JAVA_HOME=/opt/soylatte16-i386-1.0.3
+export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:/opt/local/bin:/opt/local/sbin:$PATH
+#export MANPATH=/opt/local/share/man:$MANPATH
+#export GEM_HOME=/Library/Ruby/Gems/1.8
+
+# mal testen
+export CATALINA_HOME=/opt/local/share/java/tomcat6
+export CATALINA_BASE=/opt/local/share/java/tomcat6
+export CATALINA_TMPDIR=/opt/local/share/java/tomcat6/temp
+
+
 # Environment ------------------------------------------------------
 # APXS2='/usr/sbin/apxs'
 # APACHE='/usr/sbin/httpd'
