@@ -1,0 +1,7 @@
+bash-completion
+links
+pngout
+rmtrash
+gitlynx
+pwgen
+wget

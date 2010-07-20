@@ -1,0 +1,12 @@
+autotest-rails
+autotest-fsevent
+autotest-growl
+formtastic
+github
+juicer
+passenger
+rspec
+rspec-rails
+smusher
+#firewatir
+ZenTest
