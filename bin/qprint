@@ -1,0 +1,23 @@
+#!/usr/bin/env python
+# -*- coding: iso-8859-1 -*-
+
+import sys
+from email.header import Header
+
+print "============================================================== (c) detzi - quoted printable v1"
+print "  USAGE EXAMPLE: echo \"weißbierfässer\" | qprint"
+print "expected result:"
+print "          utf-8: =?utf-8?q?wei=C3=9Fbierf=C3=A4sser?="
+print "     iso-8859-1: =?iso-8859-1?q?wei=DFbierf=E4sser?="
+print
+
+print "let's go.."
+data = sys.stdin.read().strip()
+
+
+h = Header(unicode(data, 'utf-8'), 'utf-8', 200)
+print
+print "===>      utf-8:", h
+h = Header(unicode(data, 'utf-8'), 'iso-8859-1', 200)
+print "===> iso-8859-1:", h
+print
