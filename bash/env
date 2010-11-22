@@ -1,16 +1,16 @@
 # GMX / WEB.de Environment -----------------------------------------
-export CLASSPATH=/opt/local/share/java/webde/bsf.jar:/opt/local/share/java/webde/commons-logging.jar:/opt/local/share/java/webde/jython.jar:$CLASSPATH
-export ANT_HOME=/opt/local/share/java/webde-apache-ant-1.7.0
-#export M2_REPO=/tmp/maven2repo  # standart ist das repo in ~.m2/
-export JAVA_HOME=/opt/soylatte16-i386-1.0.3
-export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:/opt/local/bin:/opt/local/sbin:$PATH
-#export MANPATH=/opt/local/share/man:$MANPATH
-#export GEM_HOME=/Library/Ruby/Gems/1.8
+# export CLASSPATH=/usr/local/share/java/webde/bsf.jar:/usr/local/share/java/webde/commons-logging.jar:/usr/local/share/java/webde/jython.jar:/usr/local/share/java/webde/ant-contrib-1.0b3.jar:$CLASSPATH
+export CLASSPATH=/usr/local/share/java/webde/*:$CLASSPATH
+export ANT_HOME='/usr/local/share/java/webde/webde-apache-ant-1.7.0'
+export JAVA_HOME='/Library/Java/Home'
 
 # mal testen
-export CATALINA_HOME=/opt/local/share/java/tomcat6
-export CATALINA_BASE=/opt/local/share/java/tomcat6
-export CATALINA_TMPDIR=/opt/local/share/java/tomcat6/temp
+export CATALINA_HOME='/usr/local/Cellar/tomcat/6.0.26/libexec'
+export CATALINA_BASE=$CATALINA_HOME
+export CATALINA_TMPDIR=$CATALINA_HOME/temp
+
+# set PATH
+export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$CATALINA_HOME/bin:$PATH
 
 
 # Environment ------------------------------------------------------
@@ -19,21 +19,17 @@ export CATALINA_TMPDIR=/opt/local/share/java/tomcat6/temp
 # NGINX_HOME='/usr/local/Cellar/nginx/0.7.62'
 # JAVA_HOME='/Library/Java/Home'
 # SCALA_HOME='/usr/local/Cellar/scala/2.7.5'
-# ANT_HOME='/usr/local/Cellar/apache-ant/1.7.1-bin'
+# ANT_HOME=/usr/share/java/ant-1.7.1
 
 
 
 # PATH ------------------------------------------------------------
 # if [ "$OS" = "darwin" ] ; then
-  export PATH=/opt/local/bin:/opt/local/sbin:$PATH  # OS-X Specific, with MacPorts
-  export MANPATH=/opt/local/share/man:$MANPATH
 # fi
 
 if [ -d ~/.bin ]; then
 	export PATH=~/.bin:$PATH
 fi
-
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # ruby rvm - http://rvm.beginrescueend.com/
 if [[ -s ~/.rvm/scripts/rvm ]] ; then
