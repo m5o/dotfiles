@@ -2,6 +2,7 @@ bash-completion
 links
 pngout
 rmtrash
-gitlynx
+git
+lynx
 pwgen
 wget
