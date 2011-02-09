@@ -1,0 +1,107 @@
+# Global -----------------------------------------------------------
+export TERM=xterm # fix osx backspace issue
+export HISTCONTROL='ignoredups' HISTFILESIZE=5000
+export LS_OPTIONS='--color=auto'
+
+# Colors for the Terminal
+eval `dircolors -b`
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+export LANG='de_DE@euro'
+export LC_CTYPE='de_DE@euro'
+export LC_ALL='de_DE@euro'
+#export LC_ALL=en_US
+#export LC_CTYPE=de_DE.UTF-8
+
+# the default umask is set in /etc/login.defs
+umask 0002
+
+
+
+# App specific -----------------------------------------------------
+export LESS=' -Ri '
+export LESSOPEN='| /usr/bin/lesspipe %s';
+export LESSCLOSE='/usr/bin/lesspipe %s %s';
+
+
+
+# Global Aliases ---------------------------------------------------
+alias ..='cd ..'
+alias ...='cd .. ; cd ..'
+alias l='ls $LS_OPTIONS -lA'
+alias la='ls $LS_OPTIONS -a'
+alias ls='ls $LS_OPTIONS'
+alias ll='ls $LS_OPTIONS -lh'
+alias lla='ls $LS_OPTIONS -laFh'
+
+alias o='less'
+alias grep='grep --color=auto'
+
+
+
+# Custom GMX Aliases -----------------------------------------------
+alias log='cd /var/gmx/log'
+alias lib='cd /opt/gmx/lib' # gmxlib
+alias etc='cd /opt/gmx/etc' # gmxetc
+alias bin='cd /opt/gmx/bin' # gmxbin
+# more infos run 'alias' on console 
+# GTK: tom, www
+
+
+
+# Misc -------------------------------------------------------------
+bind "set completion-ignore-case on" # note: bind used instead of sticking these in .inputrc
+bind "set bell-style none" # no bell
+
+
+
+# Completion -------------------------------------------------------
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
+
+
+# Prompts ----------------------------------------------------------
+export COLOR_NC='\[\033[0m\]' # No Color
+function xtitle_and_prompt {
+  echo -ne "\033]0;${USER}@${HOSTNAME%%.*}:${PWD/#$HOME/~}\007"  # set title
+  prompt_func  # set PS1
+}
+
+prompt_func() {
+    previous_return_value=$?;
+    prompt="[\[\033[0;34m\]\h \[\033[0;40m\]\W${COLOR_NC}] "
+
+    if test $previous_return_value -eq 0
+    then
+        PS1="${prompt}\[\033[0;32m\]> ${COLOR_NC}"
+    else
+        PS1="${prompt}\[\033[0;31m\]> ${COLOR_NC}"
+    fi
+}
+PROMPT_COMMAND=xtitle_and_prompt  #set prompt and title
+
+export PS2='> '    # Secondary prompt
+export PS3='#? '   # Prompt 3
+export PS4='+'     # Prompt 4
+
+
+
+# Navigation -------------------------------------------------------
+# I got the following from, and mod'd it: http://www.macosxhints.com/article.php?story=20020716005123797
+# The following aliases (save & show) are for saving frequently used directories
+if [ ! -f ~/.dirs ]; then  # if doesn't exist, create it
+  touch ~/.dirs
+fi
+
+alias show='cat ~/.dirs'
+save (){
+  command sed "/!$/d" ~/.dirs > ~/.dirs1; \mv ~/.dirs1 ~/.dirs; echo "$@"=\"`pwd`\" >> ~/.dirs; source ~/.dirs ; 
+}
+source ~/.dirs  # Initialization for the above 'save' facility: source the .sdirs file 
+shopt -s cdable_vars # set the bash option so that no '$' is required when using the above facility
+
+
+
+# Eof --------------------------------------------------------------
