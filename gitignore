@@ -2,3 +2,7 @@
 .svn
 *~
 *.sw?
+*.tmproj
+log/*
+*.log
+tmp/

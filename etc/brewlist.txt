@@ -1,3 +1,4 @@
+# use https://rubygems.org/gems/brewdler
 bash-completion
 links
 pngout
@@ -6,3 +7,6 @@ git
 lynx
 pwgen
 wget
+tree
+imagemagick
+gs
