@@ -31,7 +31,16 @@ alias colors_env="set | egrep 'COLOR_\w*'"  # lists all the colors
 
 # Bring in the other files ----------------------------------------------------
 
+# if [ -z "$PS1" ]; then # If running interactively
+  export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+# fi
+
 for file in $(ls ~/.bash); do
   source ~/.bash/$file
 done
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

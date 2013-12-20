@@ -259,3 +259,8 @@ mqdropdatabase(){
   echo Warning | highlight red '.*'
   mysqladmin -u root drop $@ 
 }
+
+
+
+# homebrew ------------------------------------------------
+source "`brew --prefix grc`/etc/grc.bashrc"
