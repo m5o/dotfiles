@@ -7,14 +7,16 @@ export LS_OPTIONS='--color=auto'
 eval `dircolors -b`
 export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
-export LANG='de_DE@euro'
-export LC_CTYPE='de_DE@euro'
-export LC_ALL='de_DE@euro'
-#export LC_ALL=en_US
-#export LC_CTYPE=de_DE.UTF-8
+# export LANG='de_DE@euro'
+# export LC_CTYPE='de_DE@euro'
+# export LC_ALL='de_DE@euro'
+export LANG='en_US'
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US
+
 
 # the default umask is set in /etc/login.defs
-umask 0002
+# umask 0002
 
 
 
@@ -40,10 +42,10 @@ alias grep='grep --color=auto'
 
 
 # Custom GMX Aliases -----------------------------------------------
-alias log='cd /var/gmx/log'
-alias lib='cd /opt/gmx/lib' # gmxlib
-alias etc='cd /opt/gmx/etc' # gmxetc
-alias bin='cd /opt/gmx/bin' # gmxbin
+# alias log='cd /var/gmx/log'
+# alias lib='cd /opt/gmx/lib' # gmxlib
+# alias etc='cd /opt/gmx/etc' # gmxetc
+# alias bin='cd /opt/gmx/bin' # gmxbin
 # more infos run 'alias' on console 
 # GTK: tom, www
 
