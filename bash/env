@@ -1,16 +1,16 @@
 # GMX / WEB.de Environment -----------------------------------------
 # export CLASSPATH=/usr/local/share/java/webde/bsf.jar:/usr/local/share/java/webde/commons-logging.jar:/usr/local/share/java/webde/jython.jar:/usr/local/share/java/webde/ant-contrib-1.0b3.jar:$CLASSPATH
-export CLASSPATH=/usr/local/share/java/webde/*:$CLASSPATH
-export ANT_HOME='/usr/local/share/java/webde/webde-apache-ant-1.7.0'
-export JAVA_HOME='/Library/Java/Home'
+# export CLASSPATH=/usr/local/share/java/webde/*:$CLASSPATH
+# export ANT_HOME='/usr/local/share/java/webde/webde-apache-ant-1.7.0'
+# export JAVA_HOME='/Library/Java/Home'
 
 # mal testen
-export CATALINA_HOME='/usr/local/Cellar/tomcat/6.0.26/libexec'
-export CATALINA_BASE=$CATALINA_HOME
-export CATALINA_TMPDIR=$CATALINA_HOME/temp
+# export CATALINA_HOME='/usr/local/Cellar/tomcat/6.0.26/libexec'
+# export CATALINA_BASE=$CATALINA_HOME
+# export CATALINA_TMPDIR=$CATALINA_HOME/temp
 
 # set PATH
-export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$CATALINA_HOME/bin:$PATH
+# export PATH=$JAVA_HOME/bin:$ANT_HOME/bin:$CATALINA_HOME/bin:$PATH
 
 
 # Environment ------------------------------------------------------
