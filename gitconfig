@@ -42,8 +42,17 @@
   sr = svn rebase
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   rma = !git status | grep deleted | cut -d ' ' -f 5 | xargs git rm
+  nffmerge = merge --no-ff
 [merge]
   tool = opendiff
   summary = true
 [help]
   autocorrect = 1
+[difftool "Kaleidoscope"]
+	cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[difftool]
+	prompt = false
+[diff]
+	tool = Kaleidoscope
+[mergetool]
+	keepBackup = true
