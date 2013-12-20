@@ -115,6 +115,8 @@ killhard() {
 # http://www.macworld.com/article/51830/2006/07/showallfinder.html
 alias hidden-show='defaults write com.apple.Finder AppleShowAllFiles YES;killall Finder'
 alias hidden-hide='defaults write com.apple.Finder AppleShowAllFiles NO;killall Finder'
+alias mac-sleep='/usr/bin/osascript -e "tell application \"System Events\" to sleep"'
+alias mac-sleep-exit='$(mac-sleep) && exit'
 
 
 
