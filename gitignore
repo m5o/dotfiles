@@ -4,3 +4,5 @@
 *.sw?
 *.log
 log/*.log
+.tmproj
+.sass-cache/
